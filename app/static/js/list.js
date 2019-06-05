@@ -8,13 +8,13 @@ const httpGet = (url, callback) => {
         callback(request.responseText);
       } else {
         // We reached our target server, but it returned an error
-        console.log('err');
+        //console.log('err');
       }
     };
   
     request.onerror = () => {
       // There was a connection error of some sort
-      console.log('err');
+     // console.log('err');
     };
   
     request.send();
@@ -28,10 +28,9 @@ setInterval(() => {
       Object.keys(items).reverse().forEach(key => {
         console.log(items[key]);
         document.querySelector('#items').innerHTML += `
-          <div>
-            <h3 style="margin-bottom: 5px">${items[key].Item}</h3>
-            <hr>
-          </div>
+          <li>
+            ${items[key].Item}
+          </li>
         `;
       });
     });
